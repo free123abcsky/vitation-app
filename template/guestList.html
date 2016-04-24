@@ -1,0 +1,32 @@
+
+<div class="swiper-container swiper-container-guest">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background-color: #e74f54">
+            <div class="guest-box">
+                <div class="guest-header f24">
+                    婚礼来宾<span class="f20" style="color:#c6c6c6; margin-left:1%">(共有31人接受邀请)</span>
+                </div>
+                <ul class="guest-list">
+<!--                    <li>
+                        <img src="images/nan.png" class="icon-sex"/>
+                        <div class="message">
+                            <img src="images/0.jpg" class="message-avatar"/> <span class="guest-name">路海</span> <span class="f20" style="color:#4d4d4d">男方亲友(共两人参加)</span>
+                            <div class="accept-date">2016-04-13 22:26</div>
+                        </div>
+                    </li>-->
+                    <li ng-repeat="guest in guestlist track by $index" on-finish-render-filters>
+                        <img ng-src="{{guest.palyerHolderRelation == '3' ? 'assets/images/nv.png' : 'assets/images/nan.png'}}" class="icon-sex"/>
+                        <div class="message">
+                            <img ng-src="{{guest.url}}" class="message-avatar"/> <span class="guest-name">{{guest.createName}}</span>
+                            <span class="f20" style="color:#4d4d4d">{{guest.palyerHolderRelation == '3' ? '女方亲友' : '男方亲友'}}(共2人参加)</span>
+                            <div class="accept-date">{{guest.createDate | date:"yyyy-MM-dd hh:mm" }}</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    &lt;!&ndash; Add Scroll Bar &ndash;&gt;
+    <div class="swiper-scrollbar"></div>
+</div>
+

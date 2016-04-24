@@ -1,0 +1,17 @@
+<div class="dialog_container">
+    <div class="dialog_body">
+        <label for="name">姓名:</label>
+        <input type="text" name="name" id="name" ng-model="view.name" /><br/>
+        <label for="count">参加人数:</label>
+        <input type="number" name="count" id="count" ng-model="view.count" /><br/>
+        <label for="palyerHolderRelation">亲友类别:</label>
+        <select name="palyerHolderRelation" id="palyerHolderRelation" ng-model="view.palyerHolderRelation">
+            <option value="4">男方亲友</option>
+            <option value="3">女方亲友</option>
+        </select>
+    </div>
+    <div class="dialog_footer">
+        <button class="submit-btn">确定</button>
+        <button class="cancle-btn">取消</button>
+    </div>
+</div>

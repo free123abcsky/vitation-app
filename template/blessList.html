@@ -1,0 +1,27 @@
+
+<div class="swiper-container swiper-container-bless">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background-color: #e74f54">
+            <div class="guest-box">
+                <div class="guest-header f24">
+                    大家的祝福
+
+                    <span class="bless-add f28" id="blessAdd">+留言</span>
+                </div>
+                <ul class="guest-list">
+                    <li ng-repeat="bless in blesslist" on-finish-render-filters>
+                        <img ng-src="{{bless.palyerHolderRelation == '3' ? 'assets/images/nv.png' : 'assets/images/nan.png'}}" class="icon-sex"/>
+                        <div class="message">
+                            <img ng-src="{{bless.url}}" class="message-avatar"/> <span class="guest-name">{{guest.createName}}</span>
+                            <span class="f20" style="color:#4d4d4d">{{bless.content}}</span>
+                            <div class="accept-date">{{bless.createDate | date:"yyyy-MM-dd hh:mm" }}</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    &lt;!&ndash; Add Scroll Bar &ndash;&gt;
+    <div class="swiper-scrollbar"></div>
+</div>
+
