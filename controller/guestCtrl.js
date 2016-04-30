@@ -4,7 +4,7 @@
  * Desc：
  */
 
-define(['angular' , 'swiper'], function (angular , swiper) {
+define(function () {
 
     return function($scope ,$http , $routeParams){
 

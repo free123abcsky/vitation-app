@@ -4,7 +4,7 @@
  * Desc：
  */
 
-define(['angular' , 'swiper' , 'homeService'], function (angular , swiper) {
+define(function () {
 
     return function($scope ,$http , $routeParams , homeService){
 
@@ -82,8 +82,6 @@ define(['angular' , 'swiper' , 'homeService'], function (angular , swiper) {
             direction : 'vertical',
             setWrapperSize :true,
             nextButton:'.swiper-button-next',
-            lazyLoading : true,
-            lazyLoadingInPrevNext : true,
             autoHeight: true, //高度随内容变化
             onInit: function(swiper){
                 //swiperAnimateCache(swiper);
@@ -109,7 +107,7 @@ define(['angular' , 'swiper' , 'homeService'], function (angular , swiper) {
                 setWrapperSize :true,
                 direction: 'horizontal',
                 lazyLoading : true,
-                lazyLoadingInPrevNext : true,
+                lazyLoadingOnTransitionStart : true,
                 //effect: 'cube',
                 //cube: {
                 //    slideShadows: false,

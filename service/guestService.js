@@ -4,7 +4,7 @@
  * Desc：
  */
 
-define(['angular', 'require',  'app'],  function () {
+define([ 'require',  'app'],  function () {
     'use strict'
     serviceModule.service('guestService', ['$rootPath', '$http', function ($rootPath, $http) {
         var service = {

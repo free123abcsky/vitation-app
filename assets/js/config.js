@@ -11,8 +11,8 @@
     requirejs.config({
         baseUrl: '',
         paths: {
-            angular: 'assets/js/libs/angular/angular',
-            'angular-route': 'assets/js/libs/angular/angular-route',
+            //angular: 'assets/js/libs/angular/angular',
+           // 'angular-route': 'assets/js/libs/angular/angular-route',
             swiper: 'assets/js/libs/swiper/swiper',
             app : 'assets/js/app',
             'cmn-directive' : 'directive/cmnDirective',
@@ -23,25 +23,22 @@
             homeCtrl: 'controller/homeCtrl',
             guestCtrl: 'controller/guestCtrl',
             blessCtrl: 'controller/blessCtrl',
-
-
-
         },
         shim: {
-            angular: {
-                exports: 'angular'
-            },
-            'angular-route': {
-                deps: ['angular'],
-                exports: 'ngRouteModule'
-            },
+            //angular: {
+            //    exports: 'angular'
+            //},
+            //'angular-route': {
+            //    deps: ['angular'],
+            //    exports: 'ngRouteModule'
+            //},
             'swiper':{exports:'swiper'}
         },
         urlArgs: "v=" + (new Date()).getTime()
     });
 
 
-    require(['angular' , 'app'] , function(angular , app){
+    require([ 'app' , 'swiper'] , function(app){
         app.init({
             '/home' : { ctrl : 'homeCtrl' , path : 'homeCtrl' , view : 'template/home.html'},
             '/guest' : { ctrl : 'guestCtrl' , path : 'guestCtrl' , view : 'template/guestList.html'},

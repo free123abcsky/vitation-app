@@ -3,7 +3,7 @@
     <div class="swiper-wrapper">
         <div class="swiper-slide">
             <div style="float:left">
-                <img width="640px" class="swiper-lazy"  src="assets/images/bg-pic1.jpg"/>
+                <img width="640px"  src="assets/images/bg-pic1.jpg"/>
             </div>
             <div class="ptAbs" style="width:100%;top:10%;">
                 <div class="center">
@@ -20,25 +20,9 @@
         <div class="swiper-slide">
             <div class="swiper-container swiper-container-v">
                 <div class="swiper-wrapper">
-
-                    <!--<div class="swiper-slide">-->
-                        <!--<div style="float:left">-->
-                        <!--<img width="640px"  src="assets/images/081517061433.jpg"/>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="swiper-slide">-->
-                        <!--<div style="float:left">-->
-                        <!--<img width="640px" class="swiper-lazy" src="assets/images/081517061659.jpg"/>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="swiper-slide">-->
-                        <!--<div style="float:left">-->
-                        <!--<img width="640px" class="swiper-lazy" src="assets/images/081517062432.jpg"/>-->
-                        <!--</div>-->
-                    <!--</div>-->
                     <div class="swiper-slide" ng-repeat="photoUrl in photoUrllist" on-finish-render-filters>
                         <div style="float:left">
-                            <img width="640px" class=""  ng-src="{{photoUrl}}"/>
+                            <img width="640px"  class="swiper-lazy"   data-src="{{photoUrl}}"/>
                         </div>
                     </div>
                 </div>

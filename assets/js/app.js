@@ -4,7 +4,7 @@
  * Desc：系统文件配置
  */
 
-define(['angular', 'require', 'angular-route'], function (angular, require) {
+define([ 'require'], function (require) {
 
     'use strict';
     var initApp = function(routeMap){

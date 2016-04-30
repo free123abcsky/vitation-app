@@ -3,7 +3,7 @@
  * Date：2016/4/17
  * Desc：公共指令
  */
-define(['angular', 'require',  'app'],  function () {
+define([ 'require',  'app'],  function () {
 
     directiveModule
         .directive('music', function () {
