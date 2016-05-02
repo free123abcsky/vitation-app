@@ -14,6 +14,16 @@
                     <div><a style="text-decoration:none; color:red" href="javascript:void(0)" id="acceptVitation">接受邀请</a></div>
                     <div><a style="text-decoration:none; color:#FFF" id="map-address" href="http://api.map.baidu.com/marker?location= 23.146826,113.341496&title=宴会位置导航&content=嘉逸国际酒店&output=html" target="_blank">一键导航</a></div>
                 </div>
+                <div class="center ptRel" style="font-size:26px;top:-150px;">
+                    {{partyInfo.holdDate | date:'yyyy年MM月dd日'}}<br>
+                    {{partyInfo.holdAddress}} · {{partyInfo.holdHotel}}
+                </div>
+                <div class="center ptRel" style="top:-210px;">
+                    <img  src="assets/images/icon_np.png"/>
+                    <div class="f28 ptRel cw" style="letter-spacing:3px; top:-146px;">
+                        <label>{{partyInfo.createNameList[1]}} <a><img width="33" height="28"   src="assets/images/baixin.png"></a> {{partyInfo.createNameList[0]}}</label>
+                    </div>
+                </div>
             </div>
 
         </div>

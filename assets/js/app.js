@@ -7,7 +7,7 @@
 define([ 'require'], function (require) {
 
     'use strict';
-    var initApp = function(routeMap){
+    var initApp = function(routeMap , config){
 
         var app =  angular.module('webapp', [
                 'ngRoute',
@@ -60,7 +60,7 @@ define([ 'require'], function (require) {
             //var locationChangeStartOff = $rootScope.$on('$locationChangeStart', locationChangeStart);
             //var locationChangeSuccessOff = $rootScope.$on('$locationChangeSuccess', locationChangeSuccess);
 
-            var routeChangeStartOff = $rootScope.$on('$routeChangeStart', routeChangeStart);
+            //var routeChangeStartOff = $rootScope.$on('$routeChangeStart', routeChangeStart);
             var routeChangeSuccessOff = $rootScope.$on('$routeChangeSuccess', routeChangeSuccess);
 
             //function locationChangeStart(event) {
@@ -73,14 +73,14 @@ define([ 'require'], function (require) {
             //    $log.log(arguments);
             //}
 
-            function routeChangeStart(event) {
-                $log.log('routeChangeStart');
-                $log.log(arguments);
-            }
+            //function routeChangeStart(event) {
+            //    $log.log('routeChangeStart');
+            //    $log.log(arguments);
+            //}
 
             function routeChangeSuccess(event) {
-                $log.log('routeChangeSuccess');
-                $log.log(arguments);
+                //$log.log('routeChangeSuccess');
+                //$log.log(arguments);
                 var loader = document.getElementById('app-loading');
                 if(loader){document.body.removeChild(loader);};
             }
@@ -88,8 +88,7 @@ define([ 'require'], function (require) {
         var controllerModule = angular.module('myApp.controller', []);
 
         var serviceModule = angular.module('myApp.service', []);
-        serviceModule.constant('basePath', 'http://192.168.1.129:8080/dcim-server/api/admin');
-        serviceModule.constant('$rootPath', 'http://daiqisoft.tunnel.phpor.me/');
+        serviceModule.constant('$rootPath', config.rootPath);
         var directiveModule = angular.module('myApp.directive', []);
         var filterModule = angular.module('myApp.filter', []);
 

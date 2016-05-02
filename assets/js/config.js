@@ -43,6 +43,8 @@
             '/home' : { ctrl : 'homeCtrl' , path : 'homeCtrl' , view : 'template/home.html'},
             '/guest' : { ctrl : 'guestCtrl' , path : 'guestCtrl' , view : 'template/guestList.html'},
             '/bless' : { ctrl : 'blessCtrl' , path : 'blessCtrl' , view : 'template/blessList.html'},
+        },{
+            rootPath : 'http://daiqisoft.tunnel.phpor.me/'    //请求根路径
         });
     });
     //fs.config = {

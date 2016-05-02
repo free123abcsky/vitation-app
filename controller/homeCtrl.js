@@ -6,19 +6,60 @@
 
 define(function () {
 
-    return function($scope ,$http , $routeParams , homeService){
+    return function($rootScope , $scope ,$http , $routeParams , homeService){
 
+        //获取宴会信息
+        $scope.getPartyInfo = function(){
+            var params = {
+                "partyId":"20160411212022022001",   //宴会编号
+            }
+            homeService.getPartyInfo(params , function(data){
+                $scope.partyInfo = data.partyInfo;
+                $rootScope.config = {
+                    musicUrl : data.partyInfo.fullMusicUrl
+                };;
+            });
+
+            //假数据需要删除
+            $scope.partyInfo = {
+                "id" : "20160411212022022001",
+                "holdAddress" : "湖南虎门",
+                "partyDescribe" : "婚宴",
+                "holdDate" : 1462454533000,
+                "holdHotel" : "京珠大酒店",
+                "paryTypeStr" : "婚宴",
+                "holdDateStr" : "2016-05-05 21:22:13",
+                "fullMusicUrl" : null,
+                "createNameList" : [ "张舒", "戴齐" ],
+                "new" : false
+            };
+            //保留一份给全局
+            $rootScope.config ={
+                musicUrl : $scope.partyInfo.fullMusicUrl
+            };
+
+        }
         //查询图片列表
         $scope.getPhotolist = function(){
             var params = {
-                "partyId":"20160407132640000008",
+
+                "partyId":"20160411212022022001",   //宴会编号
                 "type":"1",
-                "locationNumber":"1"
+                "locationNumber":"1",
+                "specialType":"0",
+                "pageInfo":{
+                    "pageNumber":1,
+                    "pageSize":10
+                }
             }
+
             //homeService.getPhotolist(params , function(data){
-            //    $scope.photoUrllist = data.urlList;
+            //    if(data.content){
+            //        $scope.photoUrllist = data.content[0].urlList;
+            //    }
             //});
 
+            //假数据需要删除
             $scope.photoUrllist = [
                 'assets/images/081517061659.jpg',
                 'assets/images/081517061433.jpg',
@@ -27,6 +68,7 @@ define(function () {
 
         }
 
+        $scope.getPartyInfo();
         $scope.getPhotolist();
 
         $('#acceptVitation').bind('click' , function(){
@@ -64,8 +106,20 @@ define(function () {
                         return;
                     };
 
-                    //homeService.accepVitation({} , function(result){
-                    //    layer.close(pagei); //pagei为你调用layer时返回的索引
+                    var params = {
+                        "playerName":name,
+                        "playerNumber":count,
+                        "playerType":"0",
+                        "playerHolderRelation":palyerHolderRelation
+                    };
+
+                    //homeService.accepVitation(params , function(result){
+                    //    layer.open({
+                    //        content: result.msg,
+                    //        style: 'background-color:#09C1FF; color:#fff; border:none;',
+                    //        time: 1
+                    //    });
+                    //    layer.close(pagei);
                     //});
                     layer.close(pagei)
                 })
